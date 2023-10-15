@@ -1,0 +1,37 @@
+POST http://127.0.0.1:8080/users/ HTTP/1.1
+content-type: application/json
+
+{
+	"name": "Thiago",
+	"username": "thiagok",
+	"password": "thiago123"
+}
+
+###
+
+POST http://127.0.0.1:8080/tasks/ HTTP/1.1
+content-type: application/json
+Authorization: Basic thiagok thiago123
+
+{
+	"description": "Tarefa 1",
+	"title": "Titulo da tarefa 12312 3123 123 12 312 3123 123 123123 12 3",
+	"priority": "alta",
+	"startAt": "2023-10-17T00:00:00",
+	"endAt": "2023-10-20T00:00:00"
+}
+
+###
+
+GET http://127.0.0.1:8080/tasks/ HTTP/1.1
+Authorization: Basic thiagok thiago123
+
+
+###
+PUT http://127.0.0.1:8080/tasks/dbec38dc-1a90-49f5-9ea4-3ca1030a7c22 HTTP/1.1
+content-type: application/json
+Authorization: Basic thiagok thiago123
+
+{
+	"description": "Tarefa XYZ"
+}
